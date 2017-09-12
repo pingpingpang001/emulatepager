@@ -7,7 +7,6 @@ import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
-import android.graphics.Paint;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
@@ -79,7 +78,7 @@ public class turntest extends Activity {
 						mPageWidget.calcCornerXY(e.getX(), e.getY());
 
 						pagefactory.onDraw(mCurPageCanvas);
-						if (mPageWidget.DragToRight()) {
+						if (mPageWidget.dragToRight()) {
 							try {
 								pagefactory.prePage();
 							} catch (IOException e1) {

@@ -100,6 +100,7 @@ public class PageWidget extends View {
 				.getSystemService(Context.WINDOW_SERVICE);;
 		mWidth = wm.getDefaultDisplay().getWidth();
 		mHeight = wm.getDefaultDisplay().getHeight();
+		mMaxLength = (float) Math.hypot(mWidth,mHeight);
 	}
 
 	/**
@@ -570,6 +571,7 @@ public class PageWidget extends View {
 		// canvas.drawBitmap(bitmap, mMatrix, null);
 		mPaint.setColorFilter(null);
 		canvas.rotate(mDegrees, mBezierStart1.x, mBezierStart1.y);
+	//	canvas.translate(0,800);
 		mFolderShadowDrawable.setBounds(left, (int) mBezierStart1.y, right,
 				(int) (mBezierStart1.y + mMaxLength));
 		mFolderShadowDrawable.draw(canvas);
@@ -621,7 +623,7 @@ public class PageWidget extends View {
 	/**
 	 * Author : hmg25 Version: 1.0 Description : 是否从左边翻向右边
 	 */
-	public boolean DragToRight() {
+	public boolean dragToRight() {
 		if (mCornerX > 0)
 			return false;
 		return true;
